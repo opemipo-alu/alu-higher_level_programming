@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 class Square:
     """
     This class represents a square.
@@ -28,13 +29,15 @@ class Square:
         """
         return self.__size ** 2
 
+
 if __name__ == "__main__":
     my_square_1 = Square(3)
-    print("{}".format(my_square_1.area()))  # Output: 9
+    print("{}".format(my_square_1.area()))  # Correct output: 9
 
     my_square_2 = Square(89)
-    print("{}".format(my_square_2.area()))  # Output: 7921
+    print("{}".format(my_square_2.area()))  # Correct output: 7921
 
     my_square_3 = Square()
-    print("{}".format(my_square_3.area()))  # Output: 0
+    print("{}".format(my_square_3.area()))  # Correct output: 0
+
 
