@@ -30,18 +30,11 @@ class Square:
 
 if __name__ == "__main__":
     my_square_1 = Square(3)
-    print("Area: {}".format(my_square_1.area()))  # Output: Area: 9
+    print("{}".format(my_square_1.area()))  # Output: 9
 
-    try:
-        print(my_square_1.size)  # Output: AttributeError: 'Square' object has no attribute 'size'
-    except Exception as e:
-        print(e)
+    my_square_2 = Square(89)
+    print("{}".format(my_square_2.area()))  # Output: 7921
 
-    try:
-        print(my_square_1.__size)  # Output: AttributeError: 'Square' object has no attribute '__size'
-    except Exception as e:
-        print(e)
-
-    my_square_2 = Square(5)
-        print("Area: {}".format(my_square_2.area()))  # Output: Area: 25
+    my_square_3 = Square()
+    print("{}".format(my_square_3.area()))  # Output: 0
 
