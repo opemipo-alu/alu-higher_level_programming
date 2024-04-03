@@ -1,16 +1,23 @@
 #!/usr/bin/python3
+"""
+This module contains the Square class.
+"""
+
 
 class Square:
     """
-    This class represents a square.
+    Represents a square.
+
+    Attributes:
+        __size (int): The size of the square.
     """
 
     def __init__(self, size=0):
         """
-        Initializes a Square instance.
+        Initializes a Square instance with a size.
 
         Args:
-            size (int): The size of the square.
+            size (int, optional): The size of the square.
 
         Raises:
             TypeError: If size is not an integer.
@@ -23,38 +30,66 @@ class Square:
         else:
             self.__size = size
 
+    @property
+    def size(self):
+        """
+        Getter method for __size attribute.
+
+        Returns:
+            int: The size of the square.
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter method for __size attribute.
+
+        Args:
+            value (int): The size of the square.
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
+
 if __name__ == "__main__":
-    my_square_1 = Square(3)
-    print(type(my_square_1))  # Output: <class '2-square.Square'>
-    print(my_square_1.__dict__)  # Output: {'_Square__size': 3}
+    mysquare = Square(3)
+    print(type(mysquare))  # Output: <class '__main__.Square'>
+    print(mysquare.__dict__)  # Output: {'_Square__size': 3}
 
-    my_square_2 = Square()
-    print(type(my_square_2))  # Output: <class '2-square.Square'>
-    print(my_square_2.__dict__)  # Output: {'_Square__size': 0}
+    mysquare = Square(89)
+    print(type(mysquare))  # Output: <class '__main__.Square'>
+    print(mysquare.__dict__)  # Output: {'_Square__size': 89}
 
-    try:
-        print(my_square_1.size)
-    except Exception as e:
-        print(e)  # Output: 'Square' object has no attribute 'size'
-
-    try:
-        print(my_square_1.__size)
-    except Exception as e:
-        print(e)  # Output: 'Square' object has no attribute '__size'
+    mysquare = Square()
+    print(type(mysquare))  # Output: <class '__main__.Square'>
+    print(mysquare.__dict__)  # Output: {'_Square__size': 0}
 
     try:
-        my_square_3 = Square("3")
-        print(type(my_square_3))  # Output: size must be an integer
-        print(my_square_3.__dict__)  # Output: {}
-
+        mysquare = Square("3")
+        print(type(mysquare))
+        print(mysquare.__dict__)
     except Exception as e:
-        print(e)
+        print(e)  # Output: size must be an integer
 
     try:
-        my_square_4 = Square(-89)
-        print(type(my_square_4))  # Output: size must be >= 0
-        print(my_square_4.__dict__)  # Output: {}
-
+        mysquare = Square(3.14)
+        print(type(mysquare))
+        print(mysquare.__dict__)
     except Exception as e:
-        print(e)
+        print(e)  # Output: size must be an integer
 
+    try:
+        mysquare = Square(-89)
+        print(type(mysquare))
+        print(mysquare.__dict__)
+    except Exception as e:
+        print(e)  # Output: size must be >= 0
