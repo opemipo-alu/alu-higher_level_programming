@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 
-print("object" + "-" + "oriented programming with Python")
+str1 = "object"
+str2 = "oriented programming with Python"
+print(str1 + "-" + str2)
