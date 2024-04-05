@@ -1,18 +1,10 @@
 #!/usr/bin/python3
-"""
-This module contains an empty Square class.
-"""
+
+
+"""Define a class Square."""
 
 
 class Square:
-    """
-    An empty class representing a square.
-    """
+    """Represent a square."""
+
     pass
-
-
-if __name__ == "__main__":
-    my_square = Square()
-    print(type(my_square))  # Output: <class '__main__.Square'>
-    print(my_square.__dict__)  # Output: {}
-
